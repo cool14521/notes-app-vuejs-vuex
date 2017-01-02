@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { editNote } from '../vuex/actions'
 
 export default {
   computed: {
