@@ -48,16 +48,18 @@ export default {
       show: 'all'
     }
   },
-  vuex: {
-    getters: {
-      notes: state => state.notes,
-      activeNote: state => state.activeNote
-    },
-    actions: {
-      updateActiveNote
+  methods: {
+    updateActiveNote (note) {
+      this.$store.dispatch('updateActiveNote', note)
     }
   },
   computed: {
+    notes () {
+      return this.$store.state.notes
+    },
+    activeNote () {
+      return this.$store.getters.activeNote
+    },
     filteredNotes () {
       if (this.show === 'all'){
         return this.notes
