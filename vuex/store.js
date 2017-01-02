@@ -24,8 +24,9 @@ const mutations = {
   },
 
   DELETE_NOTE (state) {
-    state.notes.$remove(state.activeNote)
-    state.activeNote = state.notes[0]
+    var index = state.notes.indexOf(state.activeNote)
+    state.notes.splice(index, 1)
+    state.activeNote = state.notes.length > 0 ? state.notes[0] : {}
   },
 
   TOGGLE_FAVORITE (state) {
