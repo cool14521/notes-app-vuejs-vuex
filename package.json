@@ -4,7 +4,8 @@
   "description": "This code is for the tutorial on building a Notes App using VueJs and Vuex",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
