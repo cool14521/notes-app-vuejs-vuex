@@ -12,12 +12,14 @@
 import { editNote } from '../vuex/actions'
 
 export default {
-  vuex: {
-    getters: {
-      activeNoteText: state => state.activeNote.text
-    },
-    actions: {
-      editNote
+  computed: {
+    activeNoteText () {
+      return this.$store.state.activeNote.text
+    }
+  },
+  methods: {
+    editNote (e) {
+      this.$store.dispatch('editNote', e.target.value)
     }
   }
 }
