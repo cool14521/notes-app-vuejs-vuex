@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as actions from './actions'
 
 Vue.use(Vuex)
 
@@ -36,7 +37,13 @@ const mutations = {
   }
 }
 
+const getters = {
+  activeNote: state => state.activeNote
+}
+
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  actions,
+  getters
 })
